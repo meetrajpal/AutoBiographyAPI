@@ -1,0 +1,6 @@
+@AutoBiographyAPI_HostAddress = http://localhost:5245
+
+GET {{AutoBiographyAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
