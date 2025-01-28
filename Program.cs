@@ -1,12 +1,16 @@
 using AutoBiographyAPI.Data;
 using AutoBiographyAPI.Service;
 using Microsoft.EntityFrameworkCore;
+using DotNetEnv;
 
 var builder = WebApplication.CreateBuilder(args);
 
+DotNetEnv.Env.Load();
+string connectionString = Environment.GetEnvironmentVariable("DB_STR");
+
 // Add services to the container.
 builder.Services.AddDbContext<ApplicationDbContext>(options => { 
-        options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")); 
+        options.UseSqlServer(connectionString); 
     }
 );
 builder.Services.AddCors(options =>
