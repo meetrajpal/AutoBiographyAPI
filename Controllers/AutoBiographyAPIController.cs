@@ -3,9 +3,11 @@ using AutoBiographyAPI.DTO.REQ;
 using AutoBiographyAPI.Service;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Cors;
 
 namespace AutoBiographyAPI.Controllers
 {
+    [EnableCors]
     [ApiController]
     [Route("api/user-saved-pics")]
     //[Route("api/[controller]")]
